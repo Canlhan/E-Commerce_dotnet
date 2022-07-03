@@ -28,13 +28,13 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete(Product product)
         {
-            Product productToDelete = _products.SingleOrDefault(p=>p.ProductId == product.ProductId);
+            Product productToDelete = _products.SingleOrDefault(p=>p.ProductId == product.ProductId); // _products ı tek tek dolaşmaya yarar ( foreach gibi daha iyisi (LİNQ) )
             _products.Remove(productToDelete);
         }
 
         public List<Product> GetAll()
         {
-            return _products;
+            return _products;    
         }
 
         public List<Product> GettAllByCategory(int categoryId)
@@ -43,8 +43,9 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public void Update(Product product) // bu product userın gördüğü product güncelle butonuna basınca veri kaynağından güncelliyorum.
-        {
-            Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
+        {   
+            //Gönderdiğim ürün id'sine sahip olan listedeki ürünü bul
+            Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId); 
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.UnitPrice = product.UnitPrice;

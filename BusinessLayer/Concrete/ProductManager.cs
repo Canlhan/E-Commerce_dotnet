@@ -17,7 +17,7 @@ namespace BusinessLayer.Concrete
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
-            Console.WriteLine("xd");
+          
         }
 
         public List<Product> GetAll()
