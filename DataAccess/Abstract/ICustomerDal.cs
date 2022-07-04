@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ICategoryDal:IEntityRepo<Category>
+    public interface ICustomerDal:IEntityRepo<Customer>
     {
-        
     }
 }

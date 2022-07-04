@@ -8,11 +8,11 @@ namespace E_Commerce.Models
     public class Ürün
     {
         public int MyProperty { get; set; }
-        public int MyProperty { get; set; }
-        public int MyProperty { get; set; }
-        public int MyProperty { get; set; }
-        public int MyProperty { get; set; }
-        public int MyProperty { get; set; }
+        public int a{ get; set; }
+        public int b { get; set; }
+        public int c { get; set; }
+        public int d { get; set; }
+        public int e{ get; set; }
 
     }
 }
