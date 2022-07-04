@@ -9,5 +9,6 @@ namespace E_Commerce.Models
     {
         public int KategoriId { get; set; }
         public string KategoriAd { get; set; }
+        private string name{get;set;}
     }
 }
