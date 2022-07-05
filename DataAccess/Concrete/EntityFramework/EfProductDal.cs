@@ -24,9 +24,8 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Delete(Product entity)
         {
-#pragma warning disable IDE0090 // 'new(...)' kullanın
+
             using (dbContext context = new dbContext())
-#pragma warning restore IDE0090 // 'new(...)' kullanın
             {
                 var deletedEntity = context.Entry(entity); 
                 deletedEntity.State = EntityState.Deleted; 
@@ -36,12 +35,21 @@ namespace DataAccess.Concrete.EntityFramework
 
         public Product Get(Expression<Func<Product, bool>> filter)
         {
-            throw new NotImplementedException();
+            using (DbContext context = new dbContext())
+            {
+                return context.Set<Product>().SingleOrDefault(filter);
+                  
+            }
         }
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using (DbContext context=new dbContext())
+            {
+                return filter == null 
+                    ? context.Set<Product>().ToList() 
+                    : context.Set<Product>().Where(filter).ToList();
+            }
         }
 
         public void Update(Product entity)
