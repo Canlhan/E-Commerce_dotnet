@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category:IEntity
+    public class Cart:IEntity
     {
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
+        public int CartID { get; set; }
+        public DateTime DataCreated { get; set; }
+        public int CustomerID { get; set; }
     }
 }

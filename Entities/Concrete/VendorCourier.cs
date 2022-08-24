@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category:IEntity
+    public class VendorCourier:IEntity
     {
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
+        public int VendorCourierID { get; set; }
+        public int VendorID { get; set; }
+        public int CourierID { get; set; }
+
     }
 }
