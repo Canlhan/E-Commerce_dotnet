@@ -20,6 +20,8 @@ namespace DataAccess.Concrete.EntityFramework
             // db tarafında hata verdi ( sürüm kaynaklı ) " Bu kod yazılınca primary key olduğunu algıladı " !!!!
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Orders>().HasKey(o => o.OrderID);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Vendor>().HasKey(o => o.VendorID);
         }
 
         public DbSet<Product> Product { get; set; }

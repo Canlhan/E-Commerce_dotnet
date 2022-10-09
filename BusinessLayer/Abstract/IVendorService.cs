@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ICategoryService
+    public interface IVendorService
     {
-        IDataResult<List<Category>> GetAll();
-        IDataResult<Category> GetById(int CategoryID);
-        IResult Add(Category category);
+        IDataResult<List<Vendor>> GetAll();
+        IDataResult<Vendor> GetById(int VendorID);
+        IResult Add(Vendor vendor);
     }
 }

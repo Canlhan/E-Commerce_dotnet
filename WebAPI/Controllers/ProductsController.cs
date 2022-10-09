@@ -15,6 +15,7 @@ namespace WebAPI.Controllers
     public class ProductsController : ControllerBase
     {
         IProductService _productService;
+        private object _categoryService;
 
         public ProductsController(IProductService productService)
         {
@@ -43,6 +44,21 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getproductsbycategoryid/{id:int}")]
+
+        public IActionResult GetAllByCategoryId(int id)
+        {
+            var res = _productService.GetAllByCategoryId(id);
+            if (res.Success)
+            {
+                return Ok(res);
+
+            }
+            return BadRequest(res);
+        }
+
+
 
         //güncelleme için httpput silme için httpdelete AMA silme ve güncelleme için de genellikle POST kullanılır.
 
